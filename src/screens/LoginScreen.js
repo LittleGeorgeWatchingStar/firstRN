@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import colors from "../config/colors";
 import Screen from "../components/Screen";
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import logoRed from "../../assets/logo-red.png";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -14,9 +15,8 @@ const validationSchema = Yup.object().shape({
 function LoginScreen(props) {
   return (
     <Screen style={styles.container}>
-      {/* <Image style={styles.logo} source={require("../assets/logo-red.png")} /> */}
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo-red.png")} />
+        <Image style={styles.logo} source={logoRed} />
         <Text style={styles.tagline}>
           Welcome back to Selenaston
         </Text>

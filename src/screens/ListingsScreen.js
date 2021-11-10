@@ -4,25 +4,26 @@ import { FlatList, StyleSheet } from "react-native";
 import Screen from "../components/Screen";
 import Card from "../components/Card";
 import colors from "../config/colors";
-
+import jacket from "../../assets/jacket.jpg";
+import couch from "../../assets/couch.jpg"
 const listings = [
   {
     id: 1,
     title: "Red jacket for sale",
     price: 100,
-    image: require("../assets/jacket.jpg"),
+    image: jacket,
   },
   {
     id: 2,
     title: "Couch in great condition",
     price: 1000,
-    image: require("../assets/couch.jpg"),
+    image: couch,
   },
   {
     id: 3,
     title: "Couch 2",
     price: 800,
-    image: require("../assets/couch.jpg"),
+    image: couch,
   },
 ];
 

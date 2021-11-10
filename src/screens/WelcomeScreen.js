@@ -7,12 +7,12 @@ import colors from "../config/colors";
 function WelcomeScreen(props) {
   return (
     <ImageBackground
-      blurRadius={10}
+      // blurRadius={1}
       style={styles.background}
-      source={require("../assets/background.jpg")}
+      source={require("../../assets/background.jpg")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo-red.png")} />
+        <Image style={styles.logo} source={require("../../assets/logo-red.png")} />
         <Text style={styles.tagline}>Selenaston V1.1</Text>
       </View>
       <View style={styles.buttonsContainer}>
