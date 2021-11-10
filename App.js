@@ -11,6 +11,7 @@ import Screen from "./src/components/Screen";
 import AppPicker from "./src/components/AppPicker";
 import AppTextInput from "./src/components/AppTextInput";
 import LoginScreen from "./src/screens/LoginScreen";
+import ListingEditScreen from "./src/screens/ListingEditScreen";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -24,7 +25,8 @@ export default function App() {
   return (
     <NativeBaseProvider>
       {/* <ListingDetailsScreen /> */}
-      <MessagesScreen />
+      <ListingEditScreen />
+      {/* <MessagesScreen /> */}
       {/* <ListingsScreen /> */}
       {/* <AccountScreen /> */}
       {/* <Screen>
