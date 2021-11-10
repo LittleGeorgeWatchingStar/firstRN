@@ -9,7 +9,7 @@ import ListItemDeleteAction from "../components/lists/ListItemDeleteAction";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
+    title: "T1iuoiu",
     description: "D1",
     image: require("../../assets/mosh.jpg"),
   },

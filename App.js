@@ -24,6 +24,7 @@ export default function App() {
   return (
     <NativeBaseProvider>
       {/* <ListingDetailsScreen /> */}
+      <MessagesScreen />
       {/* <ListingsScreen /> */}
       {/* <AccountScreen /> */}
       {/* <Screen>
@@ -36,7 +37,7 @@ export default function App() {
         />
         <AppTextInput icon="email" placeholder="Email" />
       </Screen> */}
-      <WelcomeScreen />
+      {/* <WelcomeScreen /> */}
       {/* <LoginScreen /> */}
     </NativeBaseProvider>
   );
