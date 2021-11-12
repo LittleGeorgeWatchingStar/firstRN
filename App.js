@@ -1,5 +1,5 @@
-import React, { useState }  from "react";
-import { View } from "react-native";
+import React, { useEffect, useState }  from "react";
+import { View, Button, Image } from "react-native";
 import WelcomeScreen from "./src/screens/WelcomeScreen";
 import ViewImageScreen from "./src/screens/ViewImageScreen";
 import { NativeBaseProvider } from 'native-base';
@@ -8,10 +8,13 @@ import AccountScreen from "./src/screens/AccountScreen";
 import ListingsScreen from "./src/screens/ListingsScreen";
 import MessagesScreen from "./src/screens/MessagesScreen";
 import Screen from "./src/components/Screen";
-import AppPicker from "./src/components/AppPicker";
-import AppTextInput from "./src/components/AppTextInput";
+import AppPicker from "./src/components/Picker";
+import AppTextInput from "./src/components/TextInput";
 import LoginScreen from "./src/screens/LoginScreen";
 import ListingEditScreen from "./src/screens/ListingEditScreen";
+import * as ImagePicker from "expo-image-picker";
+import { Camera } from 'expo-camera';
+import { Loaction } from 'expo-location';
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -20,12 +23,51 @@ const categories = [
 ];
 
 export default function App() {
-  const [category, setCategory] = useState(categories[0]);
+  // const [category, setCategory] = useState(categories[0]);
+  const [hasPermission, setHasPermission] = useState(null);
+  const [imageUri, setImageUri] = useState();
+
+  const requestPermission = async () => {
+    const { cameraGranted } = await Camera.requestCameraPermissionsAsync();
+    setHasPermission(cameraGranted === 'granted');
+    //const {cameraGranted} = await Camera.getCameraPermissionsAsync(Camera.MEDIA_LIBRARY);
+    //const {locationGranted} = await Loaction.getForegroundPermissionsAsync(Loaction.LOCATION_FOREGROUND);
+    // requestCameraPermission internally use permission API
+    // const {granted} = await ImagePicker.requestCameraPermissionsAsync();
+    if(hasPermission === false) {
+      alert('You need to enable permission to access the library.');
+    } 
+    // else if(!locationGranted) {
+    //   alert('You need to enable permission to access your location.');
+    // }
+  };
+
+  // useEffect's second parameter defines how many times it will be executed
+  // [] means it will only be executed once
+  // However, useEffect function cannot accept a function that returns a promise
+  // When the fn is about cleaning up, fn is about to be unmounted, it can be 
+  // used in useEffect
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if(!result.cancelled) {
+        setImageUri(result.uri);
+      }
+    } catch (error) {
+      console.log('Error reading an image', error);
+    }
+    
+  }
+
 
   return (
     <NativeBaseProvider>
       {/* <ListingDetailsScreen /> */}
-      <ListingEditScreen />
+      {/* <ListingEditScreen /> */}
       {/* <MessagesScreen /> */}
       {/* <ListingsScreen /> */}
       {/* <AccountScreen /> */}
@@ -41,6 +83,10 @@ export default function App() {
       </Screen> */}
       {/* <WelcomeScreen /> */}
       {/* <LoginScreen /> */}
+      <Screen>
+        <Button title="Select Image" onPress={selectImage}></Button>
+        <Image source={{ uri: imageUri}} style={{ width:200, height:200}}/>
+      </Screen>
     </NativeBaseProvider>
   );
 }
