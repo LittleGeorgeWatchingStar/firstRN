@@ -71,8 +71,8 @@ export default function App() {
       {/* <WelcomeScreen /> */}
       {/* <LoginScreen /> */}
       <Screen>
-        <ImageInput imageUri={imageUri} onChangeImage={null} />
-        <Button title="Select Image" onPress={selectImage}></Button>
+        <ImageInput imageUri={imageUri} onChangeImage={(uri) => setImageUri(uri)} />
+        {/* <Button title="Select Image" onPress={selectImage}></Button> */}
         {/* <Image source={{ uri: imageUri}} style={{ width:200, height:200}}/> */}
       </Screen>
     </NativeBaseProvider>
