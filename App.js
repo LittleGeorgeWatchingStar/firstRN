@@ -61,7 +61,7 @@ export default function App() {
   return (
     <NativeBaseProvider>
       {/* <ListingDetailsScreen /> */}
-      {/* <ListingEditScreen /> */}
+      <ListingEditScreen />
       {/* <MessagesScreen /> */}
       {/* <ListingsScreen /> */}
       {/* <AccountScreen /> */}
@@ -77,15 +77,7 @@ export default function App() {
       </Screen> */}
       {/* <WelcomeScreen /> */}
       {/* <LoginScreen /> */}
-      <Screen>
-        <ImageInputList
-          imageUris={imageUris}
-          onAddImage={handleAdd}
-          onRemoveImage={handleRemove}
-        />
-        {/* <Button title="Select Image" onPress={selectImage}></Button> */}
-        {/* <Image source={{ uri: imageUri}} style={{ width:200, height:200}}/> */}
-      </Screen>
+      
     </NativeBaseProvider>
   );
 }
