@@ -17,38 +17,45 @@ import * as Permissions from "expo-permissions";
 import { Camera } from "expo-camera";
 import { Loaction } from "expo-location";
 import ImageInput from "./src/components/ImageInput";
+import ImageInputList from "./src/components/ImageInputList";
 
 export default function App() {
-  // const [category, setCategory] = useState(categories[0]);
-  const [hasPermission, setHasPermission] = useState(null);
-  const [imageUri, setImageUri] = useState();
+  const [imageUris, setImageUris] = useState([]);
 
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+  // const requestPermission = async () => {
+  //   const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
-    if (!granted) {
-      alert("You need to enable permission to access the library.");
-    }
+  //   if (!granted) {
+  //     alert("You need to enable permission to access the library.");
+  //   }
+  // };
+
+  // // useEffect's second parameter defines how many times it will be executed
+  // // [] means it will only be executed once
+  // // However, useEffect function cannot accept a function that returns a promise
+  // // When the fn is about cleaning up, fn is about to be unmounted, it can be
+  // // used in useEffect
+  // useEffect(() => {
+  //   requestPermission();
+  // }, []);
+
+  // const selectImage = async () => {
+  //   try {
+  //     const result = await ImagePicker.launchImageLibraryAsync();
+  //     if (!result.cancelled) {
+  //       setImageUri(result.uri);
+  //     }
+  //   } catch (error) {
+  //     console.log("Error reading an image", error);
+  //   }
+  // };
+
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
   };
 
-  // useEffect's second parameter defines how many times it will be executed
-  // [] means it will only be executed once
-  // However, useEffect function cannot accept a function that returns a promise
-  // When the fn is about cleaning up, fn is about to be unmounted, it can be
-  // used in useEffect
-  useEffect(() => {
-    requestPermission();
-  }, []);
-
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancelled) {
-        setImageUri(result.uri);
-      }
-    } catch (error) {
-      console.log("Error reading an image", error);
-    }
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
   };
 
   return (
@@ -71,7 +78,11 @@ export default function App() {
       {/* <WelcomeScreen /> */}
       {/* <LoginScreen /> */}
       <Screen>
-        <ImageInput imageUri={imageUri} onChangeImage={(uri) => setImageUri(uri)} />
+        <ImageInputList
+          imageUris={imageUris}
+          onAddImage={handleAdd}
+          onRemoveImage={handleRemove}
+        />
         {/* <Button title="Select Image" onPress={selectImage}></Button> */}
         {/* <Image source={{ uri: imageUri}} style={{ width:200, height:200}}/> */}
       </Screen>

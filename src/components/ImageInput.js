@@ -73,11 +73,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: colors.light,
     borderRadius: 15,
-    height: 200,
+    height: 130,
     justifyContent: "center",
     // to show the round corners when image covers the corners
     overflow: "hidden",
-    width: 200,
+    width: 130,
   },
   image: {
     height: "100%",
