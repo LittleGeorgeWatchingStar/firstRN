@@ -24,13 +24,15 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import AppNavigator from "./src/navigation/AppNavigator";
 import navigationTheme from "./src/navigation/navigationTheme";
+import AuthNavigator from "./src/navigation/AuthNavigator";
 
 export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer theme={navigationTheme}>
 
-      <AppNavigator />
+        {/* <AppNavigator /> */}
+        <AuthNavigator />
       </NavigationContainer>
     </NativeBaseProvider>
   );

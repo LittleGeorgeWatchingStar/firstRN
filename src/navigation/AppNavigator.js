@@ -25,6 +25,7 @@ const AppNavigator = () => (
       name="ListingEdit"
       component={ListingEditScreen}
       options={({ navigation }) => ({
+        title:"Edit Item",
         tabBarButton: () => (
           <NewListingButton
             onPress={() => navigation.navigate(routes.LISTING_EDIT)}
@@ -47,6 +48,7 @@ const AppNavigator = () => (
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="account" color={color} size={size} />
         ),
+        headerShown: false
       }}
     />
   </Tab.Navigator>
