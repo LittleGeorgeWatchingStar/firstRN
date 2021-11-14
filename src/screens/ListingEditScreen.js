@@ -88,7 +88,7 @@ function ListingEditScreen() {
   const location = useLocation();
 
   return (
-    <Screen style={styles.container}>
+    <Screen style={[styles.container, {backgroundColor: '#FFFF66'}]}>
       <Form
         initialValues={{
           title: "",
