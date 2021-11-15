@@ -6,11 +6,8 @@ import AppText from "../components/Text";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import colors from "../config/colors";
-import jacket from "../../assets/jacket.jpg";
-import couch from "../../assets/couch.jpg"
 import routes from "../navigation/routes";
 import Screen from "../components/Screen";
-
 
 import listingsApi from "../api/listings";
 import useApi from "../hooks/useApi";
@@ -21,9 +18,6 @@ function ListingsScreen({navigation}) {
   useEffect(() => {
     getListingsApi.request();
   }, []);
-
-  console.log(getListingsApi.data);
-  console.log(getListingsApi.error);
 
   return (
     <Screen style={styles.screen}>
