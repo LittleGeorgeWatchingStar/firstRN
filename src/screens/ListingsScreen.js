@@ -16,19 +16,6 @@ import listingsApi from "../api/listings";
 import useApi from "../hooks/useApi";
 
 function ListingsScreen({navigation}) {
-  // const [listings, setListings] = useState([]);
-
-  // useEffect(() => {
-  //   loadListings;
-  // }, []);
-
-  // const loadListings = async () => {
-  //   const response = await listingsApi.getListings();
-  //   console.log(response);
-  //   setListings(response.data);
-  // }
-
-  // console.log(listings);
   const getListingsApi = useApi(listingsApi.getListings);
 
   useEffect(() => {
@@ -39,20 +26,6 @@ function ListingsScreen({navigation}) {
   console.log(getListingsApi.error);
 
   return (
-    // <Screen style={styles.screen}>
-    //   <FlatList
-    //     data={getListingsApi.data}
-    //     keyExtractor={(listing) => listing.id.toString()}
-    //     renderItem={({ item }) => (
-    //       <Card
-    //         title={item.title}
-    //         subTitle={"$" + item.price}
-    //         imageUrl={item.images[0].url}
-    //         onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
-    //       />
-    //     )}
-    //   />
-    // </Screen>
     <Screen style={styles.screen}>
       {getListingsApi.error && (
         <>
