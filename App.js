@@ -31,8 +31,8 @@ export default function App() {
     <NativeBaseProvider>
       <NavigationContainer theme={navigationTheme}>
 
-        {/* <AppNavigator /> */}
-        <AuthNavigator />
+        <AppNavigator />
+        {/* <AuthNavigator /> */}
       </NavigationContainer>
     </NativeBaseProvider>
   );
