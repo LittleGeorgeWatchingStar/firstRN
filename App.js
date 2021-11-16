@@ -25,10 +25,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AppNavigator from "./src/navigation/AppNavigator";
 import navigationTheme from "./src/navigation/navigationTheme";
 import AuthNavigator from "./src/navigation/AuthNavigator";
+import OfflineNotice from "./app/components/OfflineNotice";
 
 export default function App() {
   return (
     <NativeBaseProvider>
+      <OfflineNotice />
       <NavigationContainer theme={navigationTheme}>
 
         <AppNavigator />
