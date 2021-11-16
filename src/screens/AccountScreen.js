@@ -25,6 +25,8 @@ const menuItems = [
 ];
 
 function AccountScreen({ navigation }) {
+  const { user, logOut } = useAuth();
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
@@ -33,6 +35,11 @@ function AccountScreen({ navigation }) {
           subTitle="qzubc2017@gmail.com"
           image={require("../../assets/steven.jpg")}
         />
+        {/* <ListItem
+          title={user.name}
+          subTitle={user.email}
+          image={require("../assets/mosh.jpg")}
+        /> */}
       </View>
       <View style={styles.container}>
         <FlatList
