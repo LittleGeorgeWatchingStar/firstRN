@@ -23,6 +23,7 @@
     "expo-image-picker": "~11.0.3",
     "expo-location": "~13.0.4",
     "expo-permissions": "~13.0.3",
+    "expo-secure-store": "~11.0.3",
     "expo-sensors": "~11.0.3",
     "expo-status-bar": "~1.1.0",
     "formik": "^2.2.9",
