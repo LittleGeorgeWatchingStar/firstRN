@@ -1,8 +1,9 @@
 import { create } from "apisauce";
 import cache from "../utility/cache";
+import settings from "../config/settings";
 
 const apiClient = create({
-  baseURL: "http://24.84.208.136:9900/api",
+  baseURL: settings.apiUrl,
   // baseURL: "https://moshbucket1.s3.us-east-2.amazonaws.com/api",
 });
 

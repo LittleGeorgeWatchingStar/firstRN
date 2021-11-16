@@ -7,9 +7,9 @@ import AppNavigator from "./src/navigation/AppNavigator";
 import navigationTheme from "./src/navigation/navigationTheme";
 import AuthNavigator from "./src/navigation/AuthNavigator";
 import OfflineNotice from "./src/components/OfflineNotice";
-import AuthContext from "./app/auth/context";
-import authStorage from "./app/auth/storage";
-import { navigationRef } from "./app/navigation/rootNavigation";
+import AuthContext from "./src/auth/context";
+import authStorage from "./src/auth/storage";
+import { navigationRef } from "./src/navigation/rootNavigation";
 
 export default function App() {
   const [user, setUser] = useState();

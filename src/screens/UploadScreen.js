@@ -20,7 +20,7 @@ function UploadScreen({ onDone, progress = 0, visible = false }) {
             autoPlay
             loop={false}
             onAnimationFinish={onDone}
-            source={require("../assets/animations/done.json")}
+            source={require("../../assets/animations/done.json")}
             style={styles.animation}
           />
         )}
