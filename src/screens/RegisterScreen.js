@@ -49,48 +49,51 @@ function RegisterScreen() {
   };
 
   return (
-    <Screen style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={logoRed} />
-        <Text style={styles.headline}>Selenaston</Text>
-        <Text style={styles.tagline}>Welcomes you warmly</Text>
-      </View>
+    <>
+      <ActivityIndicator visible={registerApi.loading || loginApi.loading} />
+      <Screen style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image style={styles.logo} source={logoRed} />
+          <Text style={styles.headline}>Selenaston</Text>
+          <Text style={styles.tagline}>Welcomes you warmly</Text>
+        </View>
 
-      <View style={styles.inputContainer}>
-        <Form
-          initialValues={{ name: "", email: "", password: "" }}
-          onSubmit={handleSubmit}
-          validationSchema={validationSchema}
-        >
-          <ErrorMessage error={error} visible={error} />
-          <FormField
-            autoCorrect={false}
-            icon="account"
-            name="name"
-            placeholder="Name"
-          />
-          <FormField
-            autoCapitalize="none"
-            autoCorrect={false}
-            icon="email"
-            keyboardType="email-address"
-            name="email"
-            placeholder="Email"
-            textContentType="emailAddress"
-          />
-          <FormField
-            autoCapitalize="none"
-            autoCorrect={false}
-            icon="lock"
-            name="password"
-            placeholder="Password"
-            secureTextEntry
-            textContentType="password"
-          />
-          <SubmitButton title="Register" />
-        </Form>
-      </View>
-    </Screen>
+        <View style={styles.inputContainer}>
+          <Form
+            initialValues={{ name: "", email: "", password: "" }}
+            onSubmit={handleSubmit}
+            validationSchema={validationSchema}
+          >
+            <ErrorMessage error={error} visible={error} />
+            <FormField
+              autoCorrect={false}
+              icon="account"
+              name="name"
+              placeholder="Name"
+            />
+            <FormField
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="email"
+              keyboardType="email-address"
+              name="email"
+              placeholder="Email"
+              textContentType="emailAddress"
+            />
+            <FormField
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="lock"
+              name="password"
+              placeholder="Password"
+              secureTextEntry
+              textContentType="password"
+            />
+            <SubmitButton title="Register" />
+          </Form>
+        </View>
+      </Screen>
+    </>
   );
 }
 
