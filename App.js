@@ -25,7 +25,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AppNavigator from "./src/navigation/AppNavigator";
 import navigationTheme from "./src/navigation/navigationTheme";
 import AuthNavigator from "./src/navigation/AuthNavigator";
-import OfflineNotice from "./app/components/OfflineNotice";
+import OfflineNotice from "./src/components/OfflineNotice";
 
 export default function App() {
   return (

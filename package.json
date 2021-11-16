@@ -27,6 +27,7 @@
     "formik": "^2.2.9",
     "formik-native": "^2.1.17",
     "lottie-react-native": "4.0.3",
+    "moment": "^2.29.1",
     "native-base": "^3.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
