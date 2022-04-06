@@ -11,6 +11,8 @@ import Screen from "./src/components/Screen";
 import AppPicker from "./src/components/Picker";
 import AppTextInput from "./src/components/TextInput";
 import LoginScreen from "./src/screens/LoginScreen";
+import SearchScreen from "./src/screens/SearchScreen";
+import SearchScreenWithCards from "./src/screens/SearchScreenWithCards";
 import ListingEditScreen from "./src/screens/ListingEditScreen";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
@@ -30,25 +32,25 @@ export default function App() {
   //   }
   // };
 
-  // // useEffect's second parameter defines how many times it will be executed
-  // // [] means it will only be executed once
-  // // However, useEffect function cannot accept a function that returns a promise
-  // // When the fn is about cleaning up, fn is about to be unmounted, it can be
-  // // used in useEffect
+  // useEffect's second parameter defines how many times it will be executed
+  // [] means it will only be executed once
+  // However, useEffect function cannot accept a function that returns a promise
+  // When the fn is about cleaning up, fn is about to be unmounted, it can be
+  // used in useEffect
   // useEffect(() => {
   //   requestPermission();
   // }, []);
 
-  // const selectImage = async () => {
-  //   try {
-  //     const result = await ImagePicker.launchImageLibraryAsync();
-  //     if (!result.cancelled) {
-  //       setImageUri(result.uri);
-  //     }
-  //   } catch (error) {
-  //     console.log("Error reading an image", error);
-  //   }
-  // };
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if (!result.cancelled) {
+        setImageUri(result.uri);
+      }
+    } catch (error) {
+      console.log("Error reading an image", error);
+    }
+  };
 
   const handleAdd = (uri) => {
     setImageUris([...imageUris, uri]);
@@ -60,24 +62,7 @@ export default function App() {
 
   return (
     <NativeBaseProvider>
-      {/* <ListingDetailsScreen /> */}
-      <ListingEditScreen />
-      {/* <MessagesScreen /> */}
-      {/* <ListingsScreen /> */}
-      {/* <AccountScreen /> */}
-      {/* <Screen>
-        <AppPicker
-          selectedItem={category}
-          onSelectItem={(item) => setCategory(item)}
-          items={categories}
-          icon="apps"
-          placeholder="Category"
-        />
-        <AppTextInput icon="email" placeholder="Email" />
-      </Screen> */}
-      {/* <WelcomeScreen /> */}
-      {/* <LoginScreen /> */}
-      
+      <SearchScreenWithCards />
     </NativeBaseProvider>
   );
 }

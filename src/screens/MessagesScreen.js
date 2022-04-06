@@ -11,13 +11,13 @@ const initialMessages = [
     id: 1,
     title: "T1iuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopiuoiuwertyuiopsdfghjksdfghjkdfghsdfghjksdfghjkdfgh",
     description: "D1iuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopsdfghjksdfghjkdfghiuoiuwertyuiopsdfghjksdfghjkdfgh",
-    image: require("../../assets/mosh.jpg"),
+    image: require("../../assets/steven.jpg"),
   },
   {
     id: 2,
     title: "T2",
     description: "D2",
-    image: require("../../assets/mosh.jpg"),
+    image: require("../../assets/steven.jpg"),
   },
 ];
 
@@ -54,7 +54,7 @@ function MessagesScreen(props) {
               id: 2,
               title: "T2",
               description: "D2",
-              image: require("../../assets/mosh.jpg"),
+              image: require("../../assets/steven.jpg"),
             },
           ]);
         }}
